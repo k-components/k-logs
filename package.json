@@ -1,6 +1,6 @@
 {
   "name": "k-logs",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Kantele component template",
   "main": "index.js",
   "license": "MIT",

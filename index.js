@@ -6,7 +6,7 @@
 
   module.exports = function(app) {
     var addInfo;
-    addInfo = function(log, params) {
+    addInfo = function(log, params, next) {
       return log.setNull('url', params.url, function(err) {
         if (err) {
           return next();

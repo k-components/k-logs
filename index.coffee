@@ -2,7 +2,7 @@ md5 = require('md5')
 
 module.exports = (app) ->
 
-	addInfo = (log, params) ->
+	addInfo = (log, params, next) ->
 		log.setNull 'url', params.url, (err) ->
 			return next() if err
 
