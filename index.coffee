@@ -2,7 +2,7 @@ md5 = require('md5')
 
 module.exports = (app) ->
 
-	addInfo = (log) ->
+	addInfo = (log, params) ->
 		log.setNull 'url', params.url, (err) ->
 			return next() if err
 
@@ -37,8 +37,8 @@ module.exports = (app) ->
 					next()
 				else if !log.get()
 					model.add "k_logs", { id: md5(params.url) }, ->
-						addInfo log
+						addInfo log, params
 				else
-					addInfo log
+					addInfo log, params
 
 

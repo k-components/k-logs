@@ -6,7 +6,7 @@
 
   module.exports = function(app) {
     var addInfo;
-    addInfo = function(log) {
+    addInfo = function(log, params) {
       return log.setNull('url', params.url, function(err) {
         if (err) {
           return next();
@@ -53,10 +53,10 @@
             return model.add("k_logs", {
               id: md5(params.url)
             }, function() {
-              return addInfo(log);
+              return addInfo(log, params);
             });
           } else {
-            return addInfo(log);
+            return addInfo(log, params);
           }
         });
       }
