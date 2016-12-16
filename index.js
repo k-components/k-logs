@@ -53,10 +53,10 @@
             return model.add("k_logs", {
               id: md5(params.url)
             }, function() {
-              return addInfo(log, params);
+              return addInfo(log, params, next);
             });
           } else {
-            return addInfo(log, params);
+            return addInfo(log, params, next);
           }
         });
       }
