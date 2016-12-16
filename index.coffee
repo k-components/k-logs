@@ -36,7 +36,7 @@ module.exports = (app) ->
 				if err
 					next()
 				else if !log.get()
-					model.add "k_logs", { id: md5(params.url }, ->
+					model.add "k_logs", { id: md5(params.url) }, ->
 						addInfo log
 				else
 					addInfo log
